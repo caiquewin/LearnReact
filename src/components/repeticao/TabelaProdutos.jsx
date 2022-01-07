@@ -1,8 +1,8 @@
 import React from "react";
 import TabelaProdutos from "../../data/produtos";
-
 export default (prop) => {
-    
+  //retorna uma tabela e listando todos prodtos
+  //criar uma tabela para id outra para produto e outra para preco
   const tabelaProdutos = TabelaProdutos.map((produtos, index) => {
     return (
       <tr key={index}>
@@ -14,7 +14,7 @@ export default (prop) => {
   });
 
   return (
-    <table style={{ textAling: "center" }}>
+    <table style={{ display: "inline" }}>
       <thead>
         <tr>
           <th>Id</th>
@@ -22,7 +22,7 @@ export default (prop) => {
           <th>Preço</th>
         </tr>
       </thead>
-      <tbody style={{ textAlignLast: "center" }}>{tabelaProdutos}</tbody>
+      <tbody>{tabelaProdutos}</tbody>
     </table>
   );
 };
