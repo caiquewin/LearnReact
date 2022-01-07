@@ -6,6 +6,7 @@ import ComParametro from "./components/basico/ComParametro";
 import Aleatorio from "./components/basico/Aleatorio";
 import Card from "./layout/Card";
 import Familia from './components/basico/Familia';
+import FamiliaMembro from './components/basico/FamiliaMembro';
 
 export default function App(props) {
   return (
@@ -15,7 +16,11 @@ export default function App(props) {
       <div className="Cards">
         
         <Card titulo="#05 Componente Filhos" color="orange">
-          <Familia sobrenome="Pereira"/>
+          <Familia sobrenome="Pereira">
+          <FamiliaMembro nome="Caique"/>
+            {/* <FamiliaMembro nome="Paulo"  {...props}/>
+            <FamiliaMembro nome="Carlos"  {...props}/> */}
+            </Familia>
         </Card>
 
         <Card titulo="#04 Desafio Aleatório" color="pink">
