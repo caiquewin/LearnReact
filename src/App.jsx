@@ -3,6 +3,7 @@ import React from "react";
 
 import Card from "./components/layout/Card";
 
+import TabelaProdutos from './components/repeticao/TabelaProdutos'
 import ListaAlunos from './components/repeticao/ListaAlunos'
 import Fragmento from "./components/basico/Fragmento";
 import Primeiro from "./components/basico/Primeiro";
@@ -18,6 +19,12 @@ export default function App(props) {
 
       <div className="Cards">
         
+
+
+      <Card titulo="#07 Desafio Repetição" color="purple">
+    <TabelaProdutos></TabelaProdutos>
+        </Card>
+
         <Card titulo="#06 Repetição" color="brown">
     <ListaAlunos></ListaAlunos>
         </Card>
