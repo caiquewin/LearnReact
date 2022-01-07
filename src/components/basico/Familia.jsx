@@ -5,7 +5,9 @@ export default (props)=>{
     return(
         <div>
             {/* passando a propriedade do pai para o filho */}
-            {React.cloneElement(props.children,{...props})} 
+            {React.Children.map(props.children,(child)=>{
+                return React.cloneElement(child,{...props})
+            })} 
         </div>
     )
 }

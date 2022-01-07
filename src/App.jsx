@@ -18,8 +18,8 @@ export default function App(props) {
         <Card titulo="#05 Componente Filhos" color="orange">
           <Familia sobrenome="Pereira">
           <FamiliaMembro nome="Caique"/>
-            {/* <FamiliaMembro nome="Paulo"  {...props}/>
-            <FamiliaMembro nome="Carlos"  {...props}/> */}
+            <FamiliaMembro nome="Paulo" />
+            <FamiliaMembro nome="Carlos"/>
             </Familia>
         </Card>
 
