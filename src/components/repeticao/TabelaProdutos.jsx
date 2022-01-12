@@ -1,20 +1,25 @@
 import React from "react";
+
+import "./TabelaProdutos.css";
+
 import TabelaProdutos from "../../data/produtos";
+
 export default (prop) => {
   //retorna uma tabela e listando todos prodtos
   //criar uma tabela para id outra para produto e outra para preco
   const tabelaProdutos = TabelaProdutos.map((produtos, index) => {
     return (
-      <tr key={index}>
+      <tr className={index % 2 == 0 ? "Par" : "Impar"} key={index}>
         <td>{produtos.id}</td>
         <td>{produtos.nome}</td>
-        <td>{produtos.preco}</td>
+        <td>R$ {produtos.preco.toFixed(2).replace(".", ",")}</td>
       </tr>
     );
   });
 
   return (
-    <table style={{ display: "inline" }}>
+    <div className="TabelaProdutos">
+    <table>
       <thead>
         <tr>
           <th>Id</th>
@@ -24,5 +29,6 @@ export default (prop) => {
       </thead>
       <tbody>{tabelaProdutos}</tbody>
     </table>
+    </div>
   );
 };
