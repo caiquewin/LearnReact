@@ -1,8 +1,9 @@
 import "./App.css";
 import React from "react";
 
+import InderetaPai from './components/comunicacao/InderetaPai'
+import DiretaPai from'./components/comunicacao/DiretaPai'; 
 import Card from "./components/layout/Card";
-import DiretaPai from'./components/comunicacao/DiretaPai'
 import UsuarioInfo from "./components/condicional/UsuarioInfo";
 import ParOuImpar from "./components/condicional/ParOuImpar";
 import TabelaProdutos from "./components/repeticao/TabelaProdutos";
@@ -20,6 +21,10 @@ export default function App(props) {
       <h1>Fudamentos React</h1>
 
       <div className="Cards">
+      <Card titulo="#09 Comunicação Indireta" color="red">
+      <InderetaPai></InderetaPai>
+        </Card>
+
       <Card titulo="#09 Comunicação Direta" color="violet">
       <DiretaPai></DiretaPai>
         </Card>
