@@ -15,6 +15,7 @@ import ComParametro from "./components/basico/ComParametro";
 import Aleatorio from "./components/basico/Aleatorio";
 import Familia from "./components/basico/Familia";
 import FamiliaMembro from "./components/basico/FamiliaMembro";
+import Contador from './components/contador/Cotnador'
 
 export default function App(props) {
   return (
@@ -22,6 +23,11 @@ export default function App(props) {
       <h1>Fudamentos React</h1>
 
       <div className="Cards">
+
+      <Card titulo="#12 Contador" color="teal">
+      <Contador numeroInicial={10}/>
+        </Card>
+
       <Card titulo="#11 Componente Controlado" color="navy">
       <Input></Input>
         </Card>
@@ -39,7 +45,6 @@ export default function App(props) {
           <UsuarioInfo usuario={{ nome: "Fernando" }}></UsuarioInfo>
           <UsuarioInfo usuario={{ name: "" }}></UsuarioInfo>
           <UsuarioInfo></UsuarioInfo>
-
         </Card>
 
         <Card titulo="#07 Desafio Repetição" color="purple">
@@ -78,6 +83,7 @@ export default function App(props) {
         <Card titulo="#01 Primeiro Componente" color="blue">
           <Primeiro />
         </Card>
+
       </div>
     </div>
   );
