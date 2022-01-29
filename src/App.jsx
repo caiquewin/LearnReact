@@ -15,7 +15,8 @@ import ComParametro from "./components/basico/ComParametro";
 import Aleatorio from "./components/basico/Aleatorio";
 import Familia from "./components/basico/Familia";
 import FamiliaMembro from "./components/basico/FamiliaMembro";
-import Contador from './components/contador/Cotnador'
+import Contador from './components/contador/Contador'
+import MegaSena from "./components/megaSena/MegaSena"
 
 export default function App(props) {
   return (
@@ -23,6 +24,9 @@ export default function App(props) {
       <h1>Fudamentos React</h1>
 
       <div className="Cards">
+      <Card titulo="#13 Desafio Mega Sena" color="teal">
+      <MegaSena/>
+        </Card>
 
       <Card titulo="#12 Contador" color="teal">
       <Contador numeroInicial={10}/>
