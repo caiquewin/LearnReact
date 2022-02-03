@@ -1,5 +1,8 @@
 import React from "react";
-
+import Display from "./Display";
+import FormMega from './MegaForm'
+import BotaoGerar from "./BotaoGerar";
+import * as services from './services/index'
 class MegaSena extends React.Component {
   state = {
     Numero: [],
@@ -20,64 +23,23 @@ class MegaSena extends React.Component {
       NumeroMaximo: evento.target.value,
     });
   };
-  GerarNumero() {
-    const listaNumero = [];
-    if(this.state.TamanhoArry<this.state.NumeroMaximo || this.state.TamanhoArry==this.state.NumeroMaximo){
-        while (listaNumero.length < this.state.TamanhoArry) {
-          let numero = Math.floor(Math.random() * this.state.NumeroMaximo);
-          const validar = listaNumero.includes(numero);
-          if (!validar) {
-            listaNumero.push(numero);
-          }
-        }
-          listaNumero.sort((a, b) => a - b);
-          this.setState({ Numero: listaNumero });
+  GerarNumero=()=>{
+    const TamanhoArry =this.state.TamanhoArry
+    const NumeroMaximo = this.state.NumeroMaximo
+      const valor =services.GerarNumero(TamanhoArry,NumeroMaximo)
+    if(valor.status==200){
+          this.setState({ Numero: valor.result });
     }else{
-        alert('Numero de geraar não pode ser maior que "De 0 ate :"')
+        alert(valor.result)
     }
   }
 
   render() {
     return (
       <div>
-        {this.state.Numero.length > 0 ? (
-            <>
-            Números Sorteados:
-            <div
-            style={{
-                display: "flex",
-                justifyContent: "space-around",
-            }}
-            >
-            {this.state.Numero.map((e, index) => {
-                return <div key={e}>{e}</div>;
-            })}
-          </div>
-            </>
-        ) : (
-          <>Gere Numero Desejado</>
-        )}
-        <label>
-          <div>
-            <label htmlFor="Numeros ">QTD número gerar: </label>
-            <input
-              id="numeroInput"
-              type="number"
-              value={this.state.TamanhoArry}
-              onChange={this.tamanhoArry}
-            />
-            <div>
-              <label htmlFor="NumeroMaximo ">De 0 até: </label>
-              <input
-                id="NumeroMaximo"
-                type="number"
-                value={this.state.NumeroMaximo}
-                onChange={this.numeroMaximo}
-              />
-            </div>
-            <button onClick={(_) => this.GerarNumero()}>Gerar Números</button>
-          </div>
-        </label>
+        <Display Numero={this.state.Numero}/>
+        <FormMega TamanhoArry={this.state.TamanhoArry} tamanhoArry={this.tamanhoArry} NumeroMaximo={this.state.NumeroMaximo} numeroMaximo={this.numeroMaximo}/>
+          <BotaoGerar GerarNumero={this.GerarNumero}/>
       </div>
     );
   }
